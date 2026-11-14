@@ -1,0 +1,84 @@
+{
+  "identifier": "serverdex",
+  "name": "Serverdex",
+  "version": "1.0.0",
+  "description": "Search the Serverdex directory of MCP servers from any MCP client: find servers by keyword or category, read a server's details and install configs, and list categories. 34,000+ servers synced daily from the official MCP registry.",
+  "author": "Serverdex",
+  "authorUrl": "https://github.com/hellolistifyai",
+  "category": "developer",
+  "cloudEndpoint": "https://serverdex.io/mcp",
+  "homepage": "https://serverdex.io",
+  "icon": "🗂️",
+  "tags": [
+    "mcp",
+    "model context protocol",
+    "directory",
+    "mcp servers",
+    "registry",
+    "ai agents",
+    "developer tools",
+    "claude",
+    "cursor"
+  ],
+  "tools": [
+    {
+      "name": "search_servers",
+      "description": "Full-text search over the Serverdex directory of MCP servers (names, titles, descriptions). Returns compact rows: slug, name, author, description, category, GitHub stars, links. Use get_server with a slug for install configs.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "Words to search for, e.g. 'postgres', 'calendar', 'web scraping'. Omit to browse."
+          },
+          "category": {
+            "type": "string",
+            "description": "Restrict to one category slug (see list_categories).",
+            "enum": ["crypto-web3", "finance", "ecommerce", "marketing-seo", "business-crm", "legal-government", "health-science", "maps-travel", "lifestyle", "media", "games-sports", "education", "iot-devices", "security", "communication", "productivity", "documents", "files-storage", "content-publishing", "databases", "data-analytics", "search-web", "cloud-devops", "testing-qa", "apis-integrations", "ai-ml", "developer-tools", "other"]
+          },
+          "sort": {
+            "type": "string",
+            "description": "new = newest first (default), name = A-Z, stars = most GitHub stars first.",
+            "enum": ["new", "name", "stars"]
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "description": "Rows to return, 1-50 (default 10)."
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Page number for more results (default 1)."
+          }
+        }
+      }
+    },
+    {
+      "name": "get_server",
+      "description": "Everything Serverdex knows about one server by slug: description, category, packages (npm/PyPI/Docker), remote endpoints, GitHub facts (stars, license, last push), a README excerpt and ready-to-paste client configs for Claude Desktop / Cursor.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "description": "The server slug from search_servers or a serverdex.io/server/<slug> URL."
+          }
+        },
+        "required": ["slug"]
+      }
+    },
+    {
+      "name": "list_categories",
+      "description": "The directory's categories with live server counts and their slugs (for search_servers' category filter).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ]
+}
