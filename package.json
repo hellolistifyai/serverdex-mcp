@@ -1,6 +1,7 @@
 {
   "name": "serverdex-mcp",
-  "version": "1.0.0",
+  "mcpName": "io.serverdex/serverdex",
+  "version": "1.0.1",
   "description": "Search the Serverdex directory of 34,000+ MCP servers from any MCP client. Launcher for the remote Serverdex MCP server (https://serverdex.io/mcp).",
   "type": "module",
   "bin": {
