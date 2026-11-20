@@ -33,6 +33,21 @@ All tools are read-only.
 }
 ```
 
+### Via npm (`npx serverdex-mcp`)
+
+```json
+{
+  "mcpServers": {
+    "serverdex": {
+      "command": "npx",
+      "args": ["-y", "serverdex-mcp"]
+    }
+  }
+}
+```
+
+`npx serverdex-mcp` launches the hosted server through `mcp-remote` — no API key required.
+
 ### Any Streamable HTTP MCP client
 
 Point the client at `https://serverdex.io/mcp`. No API key is required.

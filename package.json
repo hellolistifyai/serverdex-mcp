@@ -1,0 +1,33 @@
+{
+  "name": "serverdex-mcp",
+  "version": "1.0.0",
+  "description": "Search the Serverdex directory of 34,000+ MCP servers from any MCP client. Launcher for the remote Serverdex MCP server (https://serverdex.io/mcp).",
+  "type": "module",
+  "bin": {
+    "serverdex-mcp": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "directory",
+    "registry",
+    "ai",
+    "claude",
+    "cursor"
+  ],
+  "homepage": "https://serverdex.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hellolistifyai/serverdex-mcp.git"
+  },
+  "license": "MIT",
+  "author": "Serverdex",
+  "engines": {
+    "node": ">=18"
+  }
+}
