@@ -1,6 +1,6 @@
 # Serverdex MCP server
 
-Search the [Serverdex](https://serverdex.io) directory of MCP servers from any MCP client. Serverdex indexes 42,000+ Model Context Protocol servers, synced daily from the official MCP registry, across 28 categories, with install configs, GitHub signals and category rankings on every server's page.
+Search the [Serverdex](https://serverdex.io) directory of MCP servers from any MCP client. Serverdex indexes 44,000+ Model Context Protocol servers, synced daily from the official MCP registry, across 28 categories, with install configs, GitHub signals and category rankings on every server's page.
 
 This repository describes the **remote Serverdex MCP server**, a hosted Streamable HTTP endpoint that lets agents query the whole catalogue directly.
 
@@ -15,7 +15,7 @@ This repository describes the **remote Serverdex MCP server**, a hosted Streamab
 | `search_servers` | Full-text search over the directory (names, titles, descriptions). Filter by one of 28 category slugs, sort by newest / name / stars, paginate. Returns compact rows: slug, name, author, description, category, GitHub stars, links. |
 | `get_server` | Everything about one server by slug: description, category, packages (npm / PyPI / Docker), remote endpoints, GitHub facts (stars, license, last push), a README excerpt, and ready-to-paste client configs for Claude Desktop and Cursor. |
 | `list_categories` | The directory's 28 categories with live server counts and their slugs. |
-| `find_servers_by_tool` | Servers that expose a tool with an exact name (`send_email`, `web_search`, `create_issue`), read from the live servers: most-starred first, at most 3 per publisher, with stars, live status and how each server describes the tool. Names shipped by 8+ publishers (563 as of Nov 2026). |
+| `find_servers_by_tool` | Servers that expose a tool with an exact name (`send_email`, `web_search`, `create_issue`), read from the live servers: most-starred first, at most 3 per publisher, with stars, live status and how each server describes the tool. Names shipped by 8+ publishers (627 as of Nov 2026). |
 | `get_tool_name` | What a tool name usually takes across the servers that expose it: parameters with share %, usual type, required %, usual description; plus servers and publishers shipping it. |
 
 All tools are read-only.
